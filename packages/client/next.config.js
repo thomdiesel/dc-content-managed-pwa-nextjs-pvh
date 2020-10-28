@@ -4,5 +4,6 @@ module.exports = {
     env: {
         contentApi: 'thomdemo.cdn.content.amplience.net'
     },
-    poweredByHeader: false
+    poweredByHeader: false,
+    target: 'serverless'
 }
