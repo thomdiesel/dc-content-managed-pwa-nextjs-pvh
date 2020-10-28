@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, WithStyles } from '@material-ui/core';
+import { withStyles, Typography, WithStyles } from '@material-ui/core';
 import Section from './Section';
 import ReactMarkdown from 'react-markdown';
 

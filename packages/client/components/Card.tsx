@@ -35,22 +35,22 @@ interface Props extends WithStyles<typeof styles> {
 
     image: string;
 
-    title: string;
+    header?: string;
     description?: string;
 
-    callToAction?: string;
-    callToActionHref?: string;
+    cardLink?: string;
+    cardLinkText?: string;
 }
 
-const HeroBannerBlock: React.SFC<Props> = (props) => {
+const Card: React.SFC<Props> = (props) => {
     const {
         classes,
         className,
         image,
-        title,
+        header,
         description,
-        callToAction,
-        callToActionHref,
+        cardLink,
+        cardLinkText,
         ...other
     } = props;
 
@@ -58,15 +58,15 @@ const HeroBannerBlock: React.SFC<Props> = (props) => {
         width: 3000,
         upscale: false,
         scaleMode: ImageScaleMode.ASPECT_RATIO,
-        aspectRatio: '10:5'
+        aspectRatio: '1:1'
     });
 
     return (
         <div className={clsx(classes.root, className)} {...other}>
-            <Overlay overlay={(
-                <div className={classes.overlay}>
-                    <div className={classes.overlayPanel}>
-                        <Typography variant="h2">{title}</Typography>
+
+                <img className={classes.image} src={imageUrl} />
+      
+            <Typography variant="h3">{header}</Typography>
                         {/*
                         {
                             description ? <p>{description}</p> : null
@@ -76,19 +76,14 @@ const HeroBannerBlock: React.SFC<Props> = (props) => {
                          description ? <ReactMarkdown className={classes.description} source={description} />   : null
                         }        
                         {
-                            callToAction ? (
-                                <a href={callToActionHref}>
-                                    <Button variant="outlined">{callToAction}</Button>
+                            cardLink ? (
+                                <a href={cardLinkText}>
+                                    <Button variant="outlined">{cardLinkText}</Button>
                                 </a>
                             ) : null
                         }
-                    </div>
-                </div>
-            )}>
-                <img className={classes.image} src={imageUrl} />
-            </Overlay>
         </div>
     );
 };
 
-export default withStyles(styles)(HeroBannerBlock);
+export default withStyles(styles)(Card);

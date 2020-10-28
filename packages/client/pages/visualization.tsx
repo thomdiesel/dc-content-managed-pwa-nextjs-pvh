@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 
 import EditorialBlock from '../components/EditorialBlock';
 import HeroBannerBlock from '../components/HeroBannerBlock';
+import Card from '../components/Card';
 import GalleryBlock from '../components/GalleryBlock';
 import Navigation from '../components/Navigation';
 import { fetchContentById } from '../utils/fetchContent';
@@ -22,6 +23,9 @@ const Visualization: NextPage<Props> = (props: Props) => {
         case 'HeroBannerBlock':
             ComponentType = HeroBannerBlock;
             break;
+        case 'Card':
+                ComponentType = Card;
+                break;
         case 'EditorialBlock':
             ComponentType = EditorialBlock;
             break;

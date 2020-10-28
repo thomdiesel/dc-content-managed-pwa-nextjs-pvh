@@ -10,6 +10,7 @@ import SearchBox from '../components/SearchBox';
 import Footer from '../components/Footer';
 import EditorialBlock from '../components/EditorialBlock';
 import HeroBannerBlock from '../components/HeroBannerBlock';
+import Card from '../components/Card';
 import GalleryBlock from '../components/GalleryBlock';
 import Sidebar from '../components/Sidebar';
 import { fetchContent } from '../utils/fetchContent';
@@ -62,7 +63,7 @@ const Index: NextPage<Props> = (props: Props) => {
   return (
     <>
       <Head>
-        <title>ANYA FINN</title>
+        <title>CALVIN KLEIN</title>
       </Head>
       
       <div>
@@ -85,6 +86,9 @@ const Index: NextPage<Props> = (props: Props) => {
                     case 'HeroBannerBlock':
                         ComponentType = HeroBannerBlock;
                         break;
+                    case 'Card':
+                          ComponentType = Card;
+                          break;
                     case 'EditorialBlock':
                         ComponentType = EditorialBlock;
                         break;

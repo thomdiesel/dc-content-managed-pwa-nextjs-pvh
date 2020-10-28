@@ -1,0 +1,67 @@
+
+{{#if productList}}
+<div class="o-dc-card o-dc-card-product">
+  <div class="o-dc-card-img">
+    <picture class="amp-dc-image">
+      <a href="{{description}}">
+        {{#if imageURL}}
+        <img src="{{imageURL}}" alt="{{header}}">
+        {{else}}
+        <img src="//{{image.defaultHost}}/i/{{image.endpoint}}/{{encodeURI image.name}}?&w=600&sm=s&qlt=80" alt="[AMP:PRODUCTNAME:{{skuNumber}}]">
+        {{/if}}
+      </a>
+    </picture>
+  </div>
+  <div class="o-dc-card-text">
+    <a href="{{description}}">
+      <div class="o-dc-card-tech grid-x align-justify">
+        <div class="cell auto">
+          <p class="o-dc-card-colour">{{description}}</p>
+        </div>
+ 
+      </div>
+      <div class="o-dc-text-panel">
+        <h4 class="o-dc-card-title" style="text-align: center;">{{header}}</h4>
+        {{#unless hideDescription}}<div class="o-dc-card-copy">{{description}}</div>{{/unless}}
+      </div>
+      <p class="o-dc-card-price">{{description}}</p>
+    </a>
+  </div>
+</div>
+{{else}}
+<div class="o-dc-card{{#if greyBackground}} card-bg{{/if}} {{card-type}}">
+
+  <div class="o-dc-card-img">
+
+    <picture class="amp-dc-image">
+
+
+      <a href="{{cardLink}}">
+
+        <img src="//{{image.defaultHost}}/i/{{image.endpoint}}/{{encodeURI image.name}}?&w=600&sm=s&qlt=80">
+  
+      </a>
+
+    </picture>
+
+  </div>
+
+  <div class="o-dc-card-text {{#is textAlignment 'centre'}}text-center{{/is}}">
+
+    <a href="{{cardLink}}">
+
+      <div class="o-dc-text-panel">
+        <h4 class="o-dc-card-title{{#is headerFontWeight 'bold'}} o-dc-text-bold {{/is}}">{{{header}}}</h4>
+        {{#if description}}<p class="o-dc-card-copy">{{{description}}}</p>{{/if}}
+      </div>
+
+      {{#if cardLinkText}}
+      <button class="o-dc-cta-underline o-dc-text-bold">{{cardLinkText}}</button>
+      {{/if}}
+
+    </a>
+
+  </div>
+
+</div>
+{{/if}}
